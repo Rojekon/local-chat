@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import Chat from "./components/Chat";
+import Navbar from "./components/Navbar";
+import { UserLogin } from "./components/UserLogin";
 
 function App() {
+  const [currentUser, setCurrentUser] = useState(
+    sessionStorage.getItem("userName")
+  );
+
+  function doUserLogOut(currentUser) {
+    setCurrentUser(currentUser);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar onChange={doUserLogOut} />
+      {currentUser === null && (
+        <UserLogin
+          onChangeLogin={(currentUser) => {
+            setCurrentUser(currentUser);
+          }}
+        />
+      )}
+      {currentUser !== null && <Chat />}
     </div>
   );
 }

@@ -1,38 +1,181 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  background-color: #ffffff;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  text-align: center;
+  min-height: 50vh;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+}
+
+button {
+  width: 98px;
+  height: 36px;
+  border: 1px solid rgb(181, 181, 181);
+  background-color: grey;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+input {
+  width: 70%;
+  border: 1px solid rgb(181, 181, 181);
+  background-color: white;
+  border-radius: 20px;
+  height: 36px;
+}
+
+select {
+  width: 70%;
+  border: 1px solid rgb(181, 181, 181);
+  background-color: white;
+  border-radius: 20px;
+  height: 36px;
+}
+
+.login-name {
+  color: white;
+  margin: 10px;
+}
+
+.select-room {
+  color: white;
+  margin: 10px;
+}
+
+.input-mess {
+  padding: 10px;
+  margin: 10px;
+  background-color: rgb(246, 175, 51);
+  border-radius: 20px;
+}
+
+.navbar {
+  display: table;
+  border-radius: 20px;
+  margin: 10px;
+  width: 500px;
+  background-color: rgb(246, 175, 51);
+  height: 50px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.empty-div {
+  display: table-cell;
+  width: 140px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.login-please {
+  display: table-cell;
+  width: 120px;
+  height: 36px;
+  font-size: small;
+  border: 1px solid rgb(181, 181, 181);
+  background-color: grey;
+  border-radius: 20px;
+}
+
+.chat-name {
+  display: table-cell;
+  font-size: 30px;
+  font-style: bold;
+}
+
+.logout-button {
+  display: table-cell;
+  width: 98px;
+  height: 36px;
+  border: 1px solid rgb(181, 181, 181);
+  background-color: grey;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.login {
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  height: 200px;
+  border: 1px solid rgb(181, 181, 181);
+  background-color: grey;
+  border-radius: 20px;
+}
+
+button:hover {
+  background-color: rgb(80, 80, 80);
+}
+
+.chat-window {
+  height: 500px;
+  border: 4px solid grey;
+  border-radius: 20px;
+  overflow-y: scroll;
+  margin: 0;
+}
+
+.log-user {
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-align: end;
+}
+
+.unlog-user {
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: start;
+}
+
+.log-avatar {
+  text-align: center;
+  width: 40px;
+  float: right;
+  border-radius: 20px;
+  color: white;
+  margin-left: 8px;
+  margin-right: 0;
+  background-color: rgb(246, 175, 51);
+  margin-bottom: 8px;
+}
+
+.send {
+  padding: 10px;
+  background-color: gray;
+  color: white;
+  border-radius: 20px;
+  margin: 10px;
+  max-width: 100%;
+  min-width: 150px;
+}
+
+.unlog-avatar {
+  text-align: center;
+  width: 40px;
+  color: white;
+  background-color: grey;
+  float: left;
+  margin-right: 20px;
+  border-radius: 20px;
+}
+
+.received {
+  padding: 10px;
+  background-color: rgb(246, 175, 51);
+  color: white;
+  border-radius: 20px;
+  min-width: 150px;
+  margin: 10px;
+  max-width: 100%;
+}
+
+.chat-window::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 10px;
+}
+
+.chat-window::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgb(246, 175, 51);
 }
