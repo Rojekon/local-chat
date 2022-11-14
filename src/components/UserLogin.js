@@ -7,24 +7,28 @@ export const UserLogin = ({ onChangeLogin }) => {
   const [currentRoom, setCurrentRoom] = useState(null);
 
   const doUserLogIn = function () {
-    const usernameValue = username;
-    const roomValue = roomId;
+    if (username === "") {
+      alert("Введите ваше имя для авторизации.");
+    } else {
+      const usernameValue = username;
+      const roomValue = roomId;
 
-    const loggedInUser = sessionStorage.setItem("userName", usernameValue);
-    const chekedRoom = sessionStorage.setItem("room", roomValue);
+      const loggedInUser = sessionStorage.setItem("userName", usernameValue);
+      const chekedRoom = sessionStorage.setItem("room", roomValue);
 
-    const currentUser = sessionStorage.getItem("userName");
-    const currentRoom = sessionStorage.getItem("room");
-    console.log(loggedInUser === currentUser);
-    console.log(chekedRoom === currentRoom);
+      const currentUser = sessionStorage.getItem("userName");
+      const currentRoom = sessionStorage.getItem("room");
+      console.log(loggedInUser === currentUser);
+      console.log(chekedRoom === currentRoom);
 
-    getCurrentUser();
-    getCurrentRoom();
-    onChangeLogin(currentUser);
+      getCurrentUser();
+      getCurrentRoom();
+      onChangeLogin(currentUser);
 
-    window.location.reload(false);
+      window.location.reload(false);
 
-    return true;
+      return true;
+    }
   };
 
   const getCurrentUser = function () {
